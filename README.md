@@ -1,40 +1,30 @@
-# FastHTML Boilerplate
+# FastHTML Python Guestbook (Docker)
 
-Deploy your [FastHTML](https://fastht.ml/) project to Vercel with zero configuration.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/framework-boilerplates/fasthtml&template=fasthtml)
-
-_Live Example: https://fasthtml-template.vercel.app_
-
-Visit the [FastHTML documentation](https://docs.fastht.ml/) to learn more.
+This project is a FastHTML-based guestbook web app using Flask and PostgreSQL, fully containerized with Docker.
 
 ## Getting Started
 
-Install the required dependencies:
+1. Clone this repository.
+2. Build and start the app with Docker Compose:
+	 ```powershell
+	 docker-compose up --build
+	 ```
+3. The web app will be available at [http://localhost:5000](http://localhost:5000).
 
-```bash
-pip install -r requirements.txt
-```
+## Database
 
-## Running Locally
+PostgreSQL runs in a Docker container. The default credentials are:
+	- User: `admin`
+	- Password: `123456`
+	- Database: `fasthtml_db`
 
-Start the development server on http://0.0.0.0:5001
+## Admin Access
 
-```bash
-python main.py
-```
+To delete guestbook entries, log in as admin:
+	- Username: `admin`
+	- Password: `123456789`
 
-When you make changes to your project, the server will automatically reload.
+## Customization
 
-## Deploying to Vercel
-
-Deploy your project to Vercel with the following command:
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-Or `git push` to your repostory with our [git integration](https://vercel.com/docs/deployments/git).
-
-To view the source code for this template, [visit the example repository](https://github.com/vercel/vercel/tree/main/examples/fasthtml).
+- Change database credentials in `docker-compose.yml` and `main.py` as needed.
+- Change admin password in `main.py`.
