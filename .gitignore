@@ -1,2 +1,7 @@
 .vercel
 .sesskey
+
+#vscode settings
+.vscode/*
+!.vscode/settings.json
+
