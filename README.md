@@ -28,3 +28,16 @@ To delete guestbook entries, log in as admin:
 
 - Change database credentials in `docker-compose.yml` and `main.py` as needed.
 - Change admin password in `main.py`.
+
+## Database Schema
+
+The application requires a `guestbook` table. Create it with the following SQL:
+
+```sql
+CREATE TABLE guestbook (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	message TEXT NOT NULL,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
